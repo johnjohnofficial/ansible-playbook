@@ -1,0 +1,8 @@
+---
+- hosts: all
+  vars:
+  gather_facts: no
+  tasks:
+  - name: Copiando MonitorNFeNFSe.Library.dll para \Backup
+  win_copy:
+    src: D:\MonitorNFeNFSe\""
