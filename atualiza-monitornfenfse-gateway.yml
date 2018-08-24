@@ -1,8 +1,33 @@
 ---
 - hosts: all
   vars:
+    zip_file: C:\Temp\MonitorNFeNFSe.Gateway.zip
   gather_facts: no
   tasks:
-  - name: Copiando MonitorNFeNFSe.Library.dll para \Backup
-  win_copy:
-    src: D:\MonitorNFeNFSe\""
+  - name: Criando o diretório C:\Temp caso não exista.
+    win_file:
+      path: C:\Temp
+      state: directory
+
+  - name: Upload MonitorNFeNFSe.Gateway.zip para C:\Temp
+    win_copy:
+      src: /upload/monitornfenfse/MonitorNFeNFSe.Gateway.zip
+      dest: C:\Temp
+
+  - name: Criando o diretório backup caso não exista.
+    win_file:
+      path: D:\MonitorNFeNFSe\{{ nome_cliente }}\Backup
+      state: directory
+
+  - name: Backupeando DLL MonitorNFeNFSe.Library
+    win_copy:
+      src: D:\MonitorNFeNFSe\{{ nome_cliente }}\MonitorNFeNFSe.Library.dll
+      dest: D:\MonitorNFeNFSe\{{ nome_cliente }}\Backup
+      remote_src: yes
+
+  - name: Atualizando MonitorNFeNFSe - {{ nome_cliente }}
+    win_zip:
+      src: {{ zip_file }}
+      dest: D:\MonitorNFeNFSe\{{ nome_cliente }}
+      recurse: yes
+      delete_archive: yes
