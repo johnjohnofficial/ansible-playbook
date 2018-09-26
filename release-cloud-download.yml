@@ -1,7 +1,13 @@
 ---
-- hosts: duwf  
+- hosts: duwf
+  gather_facts: no 
   tasks:
-  - name: Criando o diretório para download
+  - name: Criando o diretorio base para download
     win_file: 
       path: C:\DUWF\PacotesQualidade\{{ release }}
       state: directory
+  - name: Baixando o(s) arquivo(s)
+    win_get_url:
+      url: {{ item }}
+      dest: C:\DUWF\PacotesQualidade\{{ release }}
+    loop: {{ urls }}
