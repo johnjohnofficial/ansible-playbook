@@ -8,6 +8,6 @@
       state: directory
   - name: Baixando o(s) arquivo(s)
     win_get_url:
-      url: {{ item }}
+      url: "{{ item }}"
       dest: C:\DUWF\PacotesQualidade\{{ release }}
-    loop: {{ urls }}
+    loop: "{{ urls }}"
