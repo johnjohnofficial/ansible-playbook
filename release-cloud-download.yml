@@ -13,3 +13,10 @@
       force: no
       timeout: 30
     loop: "{{ urls }}"
+  - name: Copiando a release para os demais servidores
+    win_copy:
+      src: C:\DUWF\PacotesQualidade\{{ release }}
+      dest: \\{{ item }}\C$\DUWF\PacotesQualidade
+      remote_src: yes
+    loop: "{{ servers }}"
+    when: servers is undefined
