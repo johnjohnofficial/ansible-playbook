@@ -2,6 +2,6 @@
 - hosts: duwf  
   tasks:
   - name: Criando o diretório para download
-  	win_file: 
-	    path: C:\DUWF\PacotesQualidade\"{{ release }}"
-	    state: directory
+    win_file: 
+      path: C:\DUWF\PacotesQualidade\"{{ release }}"
+      state: directory
