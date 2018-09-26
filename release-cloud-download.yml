@@ -10,4 +10,6 @@
     win_get_url:
       url: "{{ item }}"
       dest: C:\DUWF\PacotesQualidade\{{ release }}
+      force: no
+      timeout: 30
     loop: "{{ urls }}"
