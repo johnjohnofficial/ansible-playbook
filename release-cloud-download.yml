@@ -19,4 +19,4 @@
       dest: \\{{ item }}\C$\DUWF\PacotesQualidade
       remote_src: yes
     loop: "{{ servers }}"
-    when: servers is undefined
+    when: servers is defined
