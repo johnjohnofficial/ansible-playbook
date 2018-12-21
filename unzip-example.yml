@@ -12,3 +12,4 @@
     win_unzip:
       src: C:\Temp\DealerNet.gz
       dest: D:\Example
+      recurse: yes
