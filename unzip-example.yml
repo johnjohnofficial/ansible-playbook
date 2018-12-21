@@ -10,6 +10,5 @@
       dest: C:\Temp 
   - name: unzip gz
     win_unzip:
-      src: C:\Temp\DealerNet.zip
+      src: C:\Temp\DealerNet.gz
       dest: D:\Example
-      creates: D:\Example
