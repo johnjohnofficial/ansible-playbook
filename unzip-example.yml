@@ -6,8 +6,8 @@
   tasks:
   - name: 
     win_get_url:
-      url: C:\Temp
-      dest: https://www.dropbox.com/sh/6kakxhm91e1acec/AACJYRuTIRJxIt8M2hXrKZ6Ta/DealerNet.gz?dl=1
+      url: https://www.dropbox.com/sh/6kakxhm91e1acec/AACJYRuTIRJxIt8M2hXrKZ6Ta/DealerNet.gz?dl=1
+      dest: C:\Temp
   - name: unzip gz
     win_unzip:
       src: C:\Temp\DealerNet.gz
