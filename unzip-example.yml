@@ -7,9 +7,9 @@
   - name: 
     win_get_url:
       url: https://www.dropbox.com/sh/6kakxhm91e1acec/AACJYRuTIRJxIt8M2hXrKZ6Ta/DealerNet.gz?dl=1
-      dest: C:\Temp
+      dest: C:\Temp 
   - name: unzip gz
     win_unzip:
-      src: C:\Temp\DealerNet.gz
+      src: C:\Temp\DealerNet.zip
       dest: D:\Example
       creates: D:\Example
