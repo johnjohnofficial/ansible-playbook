@@ -10,3 +10,4 @@
       - UpdateRollups
       log_path: C:\Temp\ansible-windows-update.txt
       state: installed
+      reboot: yes
