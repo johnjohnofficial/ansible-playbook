@@ -6,6 +6,7 @@
     win_psmodule:
       name: Pscx
       state: present
+      allow_clobber: yes
   - name: Unzip a package script
     win_unzip:
       src: C:\DUWF\PacotesQualidade\test\DealerNetRelatorio.gz
