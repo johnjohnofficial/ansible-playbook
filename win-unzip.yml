@@ -1,0 +1,9 @@
+---
+- hosts: all
+  gather_facts: false
+  tasks:
+  - name: Unzip a package script
+    win_unzip:
+      src: C:\DUWF\PacotesQualidade\test\DealerNet.gz
+      dest: C:\DUWF\PacotesQualidade\test-archive
+      creates: C:\DUWF\PacotesQualidade\test-archive
