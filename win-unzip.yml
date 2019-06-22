@@ -11,4 +11,4 @@
     win_unzip:
       src: C:\DUWF\PacotesQualidade\test\DealerNetRelatorio.gz
       dest: C:\DUWF\PacotesQualidade\test-archive
-      creates: C:\DUWF\PacotesQualidade\test-archive
+      recurse: yes
