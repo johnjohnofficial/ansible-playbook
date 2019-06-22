@@ -2,6 +2,10 @@
 - hosts: all
   gather_facts: false
   tasks:
+  - name: Install PSCX
+    win_psmodule:
+      name: Pscx
+      state: present
   - name: Unzip a package script
     win_unzip:
       src: C:\DUWF\PacotesQualidade\test\DealerNetRelatorio.gz
